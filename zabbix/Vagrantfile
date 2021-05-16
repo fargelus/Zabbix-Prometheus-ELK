@@ -1,0 +1,23 @@
+Vagrant.configure(2) do |config|
+  config.vm.box = 'ubuntu/bionic64'
+
+  config.vm.provider :virtualbox do |virtualbox, override|
+    virtualbox.memory = 1024
+  end
+
+  config.vm.define 'zabbix_server' do |server|
+    server.vm.host_name = 'zserver'
+    server.vm.network :private_network, ip: '10.0.0.10'
+    server.vm.network 'forwarded_port', guest: 80, host: 8081
+  end
+
+  config.vm.define 'zabbix_agent01' do |agent|
+    agent.vm.host_name = 'zagent01'
+    agent.vm.network :private_network, ip: '10.0.0.11'
+  end
+
+  config.vm.define 'zabbix_proxy' do |proxy|
+    agent.vm.host_name = 'zproxy'
+    agent.vm.network :private_network, ip: '10.0.0.12'
+  end
+end
