@@ -17,7 +17,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.define 'zabbix_proxy' do |proxy|
-    agent.vm.host_name = 'zproxy'
-    agent.vm.network :private_network, ip: '10.0.0.12'
+    proxy.vm.host_name = 'zproxy'
+    proxy.vm.network :private_network, ip: '10.0.0.12'
   end
 end
