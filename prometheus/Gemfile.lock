@@ -1,13 +1,15 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    prometheus-client (2.1.0)
+    prometheus_exporter (0.8.0)
+      webrick
+    webrick (1.7.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  prometheus-client
+  prometheus_exporter
 
 BUNDLED WITH
    2.1.4

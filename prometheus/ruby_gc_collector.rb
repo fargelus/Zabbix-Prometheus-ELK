@@ -1,21 +1,23 @@
 # frozen_string_literal: true
 
-require 'prometheus/client'
+require 'prometheus_exporter'
+require 'prometheus_exporter/server'
+require 'prometheus_exporter/client'
+require 'prometheus_exporter/instrumentation'
 
-class SimpleObject
-  def initialize(value)
-    @val = value
-  end
-end
+server = PrometheusExporter::Server::WebServer.new bind: 'localhost', port: 12345
+server.start
+PrometheusExporter::Client.default = PrometheusExporter::LocalClient.new(collector: server.collector)
 
-prometheus = Prometheus::Client.registry
-bytes_gauge = Prometheus::Client::Gauge.new(:ruby_heap_memory_bytes_counter, docstring: 'A counter of allocated heap memory')
-prometheus.register(bytes_gauge)
+bytes_gauge = PrometheusExporter::Metric::Gauge.new("ruby_heap_memory_bytes_counter", "A counter of allocated heap memory")
+server.collector.register_metric(bytes_gauge)
+
+SimpleStruct = Struct.new(:value)
 
 objects = []
 loop do
-  allocated_bytes = GC.stat[:malloc_increase_bytes]  
-  bytes_gauge.set(allocated_bytes)
-  objects << SimpleObject.new(('a'..'z').to_a.sample)
+  allocated_bytes = GC.stat[:malloc_increase_bytes]
+  bytes_gauge.observe(allocated_bytes)
+  objects << SimpleStruct.new(('a'..'z').to_a.sample)
   sleep(1)
 end
