@@ -1,0 +1,27 @@
+# HELP collector_working Is the master process collector able to collect metrics
+# TYPE collector_working gauge
+collector_working 1
+
+
+# HELP collector_rss total memory used by collector process
+# TYPE collector_rss gauge
+collector_rss 16084992
+
+
+# HELP collector_metrics_total Total metrics processed by exporter web.
+# TYPE collector_metrics_total counter
+collector_metrics_total 0
+
+
+# HELP collector_sessions_total Total send_metric sessions processed by exporter web.
+# TYPE collector_sessions_total counter
+collector_sessions_total 0
+
+
+# HELP collector_bad_metrics_total Total mis-handled metrics by collector.
+# TYPE collector_bad_metrics_total counter
+collector_bad_metrics_total 0
+
+# HELP ruby_heap_memory_bytes_counter A counter of allocated heap memory
+# TYPE ruby_heap_memory_bytes_counter gauge
+ruby_heap_memory_bytes_counter 979392
