@@ -14,4 +14,9 @@ Vagrant.configure(2) do |config|
     nginx.vm.host_name = 'nginx'
     nginx.vm.network :private_network, ip: '10.0.0.11'
   end
+
+  config.vm.define 'grafana' do |grafana|
+    grafana.vm.host_name = 'grafana'
+    grafana.vm.network :private_network, ip: '10.0.0.12'
+  end
 end
