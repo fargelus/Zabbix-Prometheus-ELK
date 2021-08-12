@@ -1,0 +1,588 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "8.1.0"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph (old)",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "snapshotData": [],
+        "type": "dashboard",
+        "datasource": "${DS_PROMETHEUS}"
+      },
+      {
+        "enable": true,
+        "hide": false,
+        "iconColor": "rgb(0, 96, 19)",
+        "name": "reloads",
+        "snapshotData": [],
+        "type": "alert",
+        "datasource": "${DS_PROMETHEUS}"
+      },
+      {
+        "enable": true,
+        "hide": false,
+        "iconColor": "rgba(255, 96, 96, 1)",
+        "name": "down",
+        "snapshotData": [],
+        "type": "alert",
+        "datasource": "${DS_PROMETHEUS}"
+      }
+    ]
+  },
+  "description": "Get started faster with Grafana Cloud then easily build these dashboards. https://grafana.com/products/cloud/\nOverview of metrics from Prometheus 2.0.  \nUseful for using prometheus to monitor your prometheus.\nRevisions welcome!",
+  "editable": true,
+  "gnetId": 3662,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_PROMETHEUS}",
+      "description": "All non-zero failures and errors",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 20,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 33,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.1.0",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {},
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1628747880000,
+                1628747910000,
+                1628747940000,
+                1628747970000,
+                1628748000000,
+                1628748030000,
+                1628748060000,
+                1628748090000,
+                1628748120000,
+                1628748150000,
+                1628748180000,
+                1628748210000,
+                1628748240000,
+                1628748270000,
+                1628748300000,
+                1628748330000,
+                1628748360000,
+                1628748390000,
+                1628748420000,
+                1628748450000,
+                1628748480000,
+                1628748510000,
+                1628748540000,
+                1628748570000,
+                1628748600000,
+                1628748630000,
+                1628748660000,
+                1628748690000,
+                1628748720000,
+                1628748750000,
+                1628748780000,
+                1628748810000,
+                1628748840000,
+                1628748870000,
+                1628748900000,
+                1628748930000,
+                1628748960000,
+                1628748990000,
+                1628749020000,
+                1628749050000,
+                1628749080000,
+                1628749110000,
+                1628749140000,
+                1628749170000,
+                1628749200000,
+                1628749230000,
+                1628749260000,
+                1628749290000,
+                1628749320000,
+                1628749350000,
+                1628749380000,
+                1628749410000,
+                1628749440000,
+                1628749470000,
+                1628749500000,
+                1628749530000,
+                1628749560000,
+                1628749590000,
+                1628749620000,
+                1628749650000,
+                1628749680000
+              ]
+            },
+            {
+              "config": {
+                "displayNameFromDS": "Failed Connections"
+              },
+              "labels": {},
+              "name": "Value",
+              "type": "number",
+              "values": [
+                94.73684210526315,
+                92.63157894736841,
+                86.31578947368419,
+                84.21052631578948,
+                82.106415528639,
+                77.89473684210526,
+                75.78947368421052,
+                69.47368421052633,
+                67.36842105263158,
+                65.2640738817387,
+                63.1578947368421,
+                63.1578947368421,
+                61.05263157894737,
+                61.05263157894737,
+                61.05263157894737,
+                58.94736842105263,
+                58.94736842105263,
+                56.84210526315789,
+                56.84210526315789,
+                56.84210526315789,
+                54.73684210526316,
+                56.84210526315789,
+                54.73684210526316,
+                56.84210526315789,
+                56.84210526315789,
+                54.73684210526316,
+                56.84210526315789,
+                54.73684210526316,
+                56.84210526315789,
+                56.84210526315789,
+                54.73684210526316,
+                56.84210526315789,
+                54.73684210526316,
+                54.73684210526316,
+                54.736265934042805,
+                52.631578947368425,
+                52.631578947368425,
+                50.526315789473685,
+                50.526315789473685,
+                50.52578393911644,
+                48.421052631578945,
+                48.421052631578945,
+                46.31578947368421,
+                48.421052631578945,
+                48.421052631578945,
+                48.48825565257111,
+                48.421052631578945,
+                46.31578947368421,
+                48.421052631578945,
+                48.42156233223507,
+                48.421052631578945,
+                50.526315789473685,
+                54.73684210526315,
+                61.05263157894737,
+                67.36842105263158,
+                71.57894736842105,
+                75.78947368421053,
+                80.00000000000001,
+                86.3157894736842,
+                92.6328790579517,
+                96.84210526315789
+              ]
+            }
+          ],
+          "meta": {
+            "preferredVisualisationType": "graph"
+          },
+          "name": "Failed Connections",
+          "refId": "A"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum(increase(net_conntrack_dialer_conn_failed_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Failed Connections",
+          "refId": "A",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_evaluator_iterations_missed_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Missed Iterations",
+          "refId": "B",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_evaluator_iterations_skipped_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Skipped Iterations",
+          "refId": "C",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_rule_evaluation_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Evaluation",
+          "refId": "D",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_sd_azure_refresh_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Azure Refresh",
+          "refId": "E",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_sd_consul_rpc_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Consul RPC",
+          "refId": "F",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_sd_dns_lookup_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "DNS Lookup",
+          "refId": "G",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_sd_ec2_refresh_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "EC2 Refresh",
+          "refId": "H",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_sd_gce_refresh_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "GCE Refresh",
+          "refId": "I",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_sd_marathon_refresh_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Marathon Refresh",
+          "refId": "J",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_sd_openstack_refresh_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Openstack Refresh",
+          "refId": "K",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_sd_triton_refresh_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Triton Refresh",
+          "refId": "L",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_target_scrapes_exceeded_sample_limit_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Sample Limit",
+          "refId": "M",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_target_scrapes_sample_duplicate_timestamp_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Duplicate Timestamp",
+          "refId": "N",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_target_scrapes_sample_out_of_bounds_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Timestamp Out of Bounds",
+          "refId": "O",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_target_scrapes_sample_out_of_order_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Sample Out of Order",
+          "refId": "P",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_treecache_zookeeper_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Zookeeper",
+          "refId": "Q",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_tsdb_compactions_failed_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "TSDB Compactions",
+          "refId": "R",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_tsdb_head_series_not_found{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Series Not Found",
+          "refId": "S",
+          "step": 2
+        },
+        {
+          "expr": "sum(increase(prometheus_tsdb_reloads_failures_total{instance=~\"$instance\"}[5m])) > 0",
+          "format": "time_series",
+          "intervalFactor": 2,
+          "legendFormat": "Reload",
+          "refId": "T",
+          "step": 2
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Failures and Errors",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "Errors",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 30,
+  "snapshot": {
+    "originalUrl": "http://10.0.0.12:3000/d/dYAeoxMnz/prometheus-2-0-overview?orgId=1",
+    "timestamp": "2021-08-12T06:28:04.340Z"
+  },
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
+        "definition": "",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "job",
+        "options": [],
+        "query": "",
+        "refresh": 1,
+        "regex": "/.*job=\"([^\"]+)/",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
+        "definition": "",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "instance",
+        "options": [],
+        "query": "",
+        "refresh": 1,
+        "regex": "/.*instance=\"([^\"]+).*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "1h",
+          "value": "1h"
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "interval",
+        "options": [
+          {
+            "selected": true,
+            "text": "1h",
+            "value": "1h"
+          }
+        ],
+        "query": "",
+        "refresh": 0,
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "2021-08-12T05:58:08.470Z",
+    "raw": {
+      "from": "now-30m",
+      "to": "now"
+    },
+    "to": "2021-08-12T06:28:08.470Z"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Prometheus 2.0 Overview",
+  "uid": "dYAeoxMnz",
+  "version": 4
+}
