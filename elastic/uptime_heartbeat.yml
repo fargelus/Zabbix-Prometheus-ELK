@@ -1,0 +1,6 @@
+# Put in /etc/heartbeat/monitors.d
+- id: uptime-servers-monitor
+  name: Otus & google uptime
+  type: http
+  hosts: ["https://otus.ru", "https://www.google.com"]
+  schedule: '@every 10s'
