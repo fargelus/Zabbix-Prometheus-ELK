@@ -1,0 +1,22 @@
+Vagrant.configure(2) do |config|
+  config.vm.box = 'ubuntu/bionic64'
+
+  config.vm.provider :virtualbox do |virtualbox, override|
+    virtualbox.memory = 2048
+  end
+
+  config.vm.define 'elastic' do |el|
+    el.vm.host_name = 'elastic'
+    el.vm.network :private_network, ip: '10.0.0.10'
+  end
+
+  config.vm.define 'logstash' do |logstash|
+    logstash.vm.host_name = 'logstash'
+    logstash.vm.network :private_network, ip: '10.0.0.11'
+  end
+
+  config.vm.define 'kibana' do |kibana|
+    kibana.vm.host_name = 'kibana'
+    kibana.vm.network :private_network, ip: '10.0.0.12'
+  end
+end
